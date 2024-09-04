@@ -1,0 +1,16 @@
+name: forticlient
+services:
+    forticlient:
+        container_name: forticlient
+        image: forticlient
+        build: ./forticlient
+        ports:
+            - 6667:6666 # Socks port
+        stdin_open: true
+        tty: true
+        privileged: true
+        
+        # Create a volume with your certificate if you VPN requires it
+
+        #volumes:
+        #    - <cert_path>:<cert_path>
